@@ -13,10 +13,10 @@
 <h1>Shiny Alt Forms</h1>
 <script>
   fetch(`assets/data.json`)
-      .then(pokemon => pokemon.json())
+      .then(res => res.json())
       .then(data => {
         console.log(data);
-      })
+      });
 </script>
 </body>
 </html>
