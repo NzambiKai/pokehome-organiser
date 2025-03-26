@@ -69,5 +69,65 @@ Data([{
       "name": "Nidoran♀"
     }, {
       "name": "Nidorina"
+    }, {
+      "name": "Nidoqueen"
+    }, {
+      "name": "Nidoran♂"
+    }, {
+      "name": "Nidorino"
+    }, {
+      "name": "Nidoking"
+    }, {
+      "name": "Clefairy"
+    }, {
+      "name": "Clefable"
+    }, {
+      "name": "Vulpix"
+    }, {
+      "name": "Ninetales"
+    }, {
+      "name": "Jigglypuff"
+    }, {
+      "name": "Wigglytuff"
+    }, {
+      "name": "Zubat"
+    }, {
+      "name": "Golbat"
+    }, {
+      "name": "Oddish"
+    }, {
+      "name": "Gloom"
+    }, {
+      "name": "Vileplume"
+    }, {
+      "name": "Paras"
+    }, {
+      "name": "Parasect"
+    }, {
+      "name": "Venonat"
+    }, {
+      "name": "Venomoth"
+    }, {
+      "name": "Diglett"
+    }, {
+      "name": "Dugtrio"
+    }, {
+      "name": "Meowth"
+    }, {
+      "name": "Persian"
+    }, {
+      "name": "Psyduck"
+    }, {
+      "name": "Golduck"
+    }, {
+      "name": "Mankey"
+    }, {
+      "name": "Primeape"
+    }, {
+      "name": "Growlithe"
+    }, {
+      "name": "Arcanine"
+    }, {
+      "name": "Poliwag"
     }
 ]);
