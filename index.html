@@ -30,10 +30,10 @@
 <h1>Shiny Alt Forms</h1>
 <script type='text/javascript' src="assets/data.js"></script>
 <script>
-  let text = "";
-  pokemon.forEach(myFunction);
-  document.getElementById("nationalDex").innerHTML = text;
-	function myFunction(pokemon, index) {
+let text = "";
+pokemon.forEach(myFunction);
+document.getElementById("nationalDex").innerHTML = text;
+function myFunction(pokemon, index) {
 		function formatDexNumber(num) {
 			let insetNum = num+1;
 			return insetNum.toString().padStart(4, '0');
