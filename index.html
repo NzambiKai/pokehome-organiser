@@ -17,8 +17,8 @@
   let text = "";
   pokemon.forEach(myFunction);
   document.getElementById("nationalDexContainer").innerHTML = text;
-function myFunction(name, index) {
-  text += index + ": " + name + "<br>"; 
+function myFunction(pokemon, index) {
+  text += index + ": " + pokemon.name + "<br>"; 
 }
 </script>
 </body>
