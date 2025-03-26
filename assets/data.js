@@ -36,11 +36,11 @@ let pokemon = [{
 }, {
   "name": "Pidgeot"
 }, {
-  "name": "Rattata"
+  "name": "Rattata",
   "gender": true,
   "alolan": 1
 }, {
-  "name": "Raticate"
+  "name": "Raticate",
   "gender": true,
   "alolan": 1
 }, {
@@ -52,11 +52,11 @@ let pokemon = [{
 }, {
   "name": "Arbok"
 }, {
-  "name": "Pikachu"
+  "name": "Pikachu",
   "gender": true,
   "alolan": 9
 }, {
-  "name": "Raichu"
+  "name": "Raichu",
   "gender": true,
   "alolan": 1
 }, {
@@ -82,29 +82,29 @@ let pokemon = [{
 }, {
   "name": "Clefable"
 }, {
-  "name": "Vulpix"
+  "name": "Vulpix",
   "alolan": 1
 }, {
-  "name": "Ninetales"
+  "name": "Ninetales",
   "alolan": 1
 }, {
   "name": "Jigglypuff"
 }, {
   "name": "Wigglytuff"
 }, {
-  "name": "Zubat"
-  "gender": true,
+  "name": "Zubat",
+  "gender": true
 }, {
-  "name": "Golbat"
-  "gender": true,
+  "name": "Golbat",
+  "gender": true
 }, {
   "name": "Oddish"
 }, {
-  "name": "Gloom"
-  "gender": true,
+  "name": "Gloom",
+  "gender": true
 }, {
-  "name": "Vileplume"
-  "gender": true,
+  "name": "Vileplume",
+  "gender": true
 }, {
   "name": "Paras"
 }, {
@@ -114,17 +114,17 @@ let pokemon = [{
 }, {
   "name": "Venomoth"
 }, {
-  "name": "Diglett"
+  "name": "Diglett",
   "alolan": 1
 }, {
-  "name": "Dugtrio"
+  "name": "Dugtrio",
   "alolan": 1
 }, {
-  "name": "Meowth"
+  "name": "Meowth",
   "alolan": 1,
   "galarian": 1
 }, {
-  "name": "Persian"
+  "name": "Persian",
   "alolan": 1
 }, {
   "name": "Psyduck"
@@ -135,10 +135,10 @@ let pokemon = [{
 }, {
   "name": "Primeape"
 }, {
-  "name": "Growlithe"
+  "name": "Growlithe",
   "hisuian": 1
 }, {
-  "name": "Arcanine"
+  "name": "Arcanine",
   "hisuian": 1
 }, {
   "name": "Poliwag"
