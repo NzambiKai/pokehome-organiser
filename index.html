@@ -35,7 +35,10 @@
   pokemon.forEach(myFunction);
   document.getElementById("nationalDex").innerHTML = text;
 function myFunction(pokemon, index) {
-  text += "<div>" + index + "<br/>" + pokemon.name + "</div>"; 
+  function addLeadingZeros(num) {
+    return num.toString().padStart(4, '0');
+	}
+  text += "<div>" + addLeadingZeros(index) + "<br/>" + pokemon.name + "</div>"; 
 }
 </script>
 </body>
