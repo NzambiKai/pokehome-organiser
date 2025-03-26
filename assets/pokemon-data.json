@@ -1,145 +1,144 @@
-'{
-      "name": "Bulbasaur"
-    }, {
-      "name": "Ivysaur"
-    }, {
-      "name": "Venusaur",
-      "gender": true
-    }, {
-      "name": "Charmander"
-    }, {
-      "name": "Charmeleon"
-    }, {
-      "name": "Charizard"
-    }, {
-      "name": "Squirtle"
-    }, {
-      "name": "Wartortle"
-    }, {
-      "name": "Blastoise"
-    }, {
-      "name": "Caterpie"
-    }, {
-      "name": "Metapod"
-    }, {
-      "name": "Butterfree"
-    }, {
-      "name": "Weedle"
-    }, {
-      "name": "Kakuna"
-    }, {
-      "name": "Beedrill"
-    }, {
-      "name": "Pidgey"
-    }, {
-      "name": "Pidgeotto"
-    }, {
-      "name": "Pidgeot"
-    }, {
-      "name": "Rattata"
-      "gender": true,
-      "alolan": 1
-    }, {
-      "name": "Raticate"
-      "gender": true,
-      "alolan": 1
-    }, {
-      "name": "Spearow"
-    }, {
-      "name": "Fearow"
-    }, {
-      "name": "Ekans"
-    }, {
-      "name": "Arbok"
-    }, {
-      "name": "Pikachu"
-      "gender": true,
-      "alolan": 9
-    }, {
-      "name": "Raichu"
-      "gender": true,
-      "alolan": 1
-    }, {
-      "name": "Sandshrew",
-      "alolan": 1
-    }, {
-      "name": "Sandslash",
-      "alolan": 1
-    }, {
-      "name": "Nidoran♀"
-    }, {
-      "name": "Nidorina"
-    }, {
-      "name": "Nidoqueen"
-    }, {
-      "name": "Nidoran♂"
-    }, {
-      "name": "Nidorino"
-    }, {
-      "name": "Nidoking"
-    }, {
-      "name": "Clefairy"
-    }, {
-      "name": "Clefable"
-    }, {
-      "name": "Vulpix"
-      "alolan": 1
-    }, {
-      "name": "Ninetales"
-      "alolan": 1
-    }, {
-      "name": "Jigglypuff"
-    }, {
-      "name": "Wigglytuff"
-    }, {
-      "name": "Zubat"
-      "gender": true,
-    }, {
-      "name": "Golbat"
-      "gender": true,
-    }, {
-      "name": "Oddish"
-    }, {
-      "name": "Gloom"
-      "gender": true,
-    }, {
-      "name": "Vileplume"
-      "gender": true,
-    }, {
-      "name": "Paras"
-    }, {
-      "name": "Parasect"
-    }, {
-      "name": "Venonat"
-    }, {
-      "name": "Venomoth"
-    }, {
-      "name": "Diglett"
-      "alolan": 1
-    }, {
-      "name": "Dugtrio"
-      "alolan": 1
-    }, {
-      "name": "Meowth"
-      "alolan": 1
-      "galarian": 1
-    }, {
-      "name": "Persian"
-      "alolan": 1
-    }, {
-      "name": "Psyduck"
-    }, {
-      "name": "Golduck"
-    }, {
-      "name": "Mankey"
-    }, {
-      "name": "Primeape"
-    }, {
-      "name": "Growlithe"
-      "hisuian": 1
-    }, {
-      "name": "Arcanine"
-      "hisuian": 1
-    }, {
-      "name": "Poliwag"
-    }'
+{
+  "name": "Bulbasaur"
+}, {
+  "name": "Ivysaur"
+}, {
+  "name": "Venusaur",
+  "gender": true
+}, {
+  "name": "Charmander"
+}, {
+  "name": "Charmeleon"
+}, {
+  "name": "Charizard"
+}, {
+  "name": "Squirtle"
+}, {
+  "name": "Wartortle"
+}, {
+  "name": "Blastoise"
+}, {
+  "name": "Caterpie"
+}, {
+  "name": "Metapod"
+}, {
+  "name": "Butterfree"
+}, {
+  "name": "Weedle"
+}, {
+  "name": "Kakuna"
+}, {
+  "name": "Beedrill"
+}, {
+  "name": "Pidgey"
+}, {
+  "name": "Pidgeotto"
+}, {
+  "name": "Pidgeot"
+}, {
+  "name": "Rattata"
+  "gender": true,
+  "alolan": 1
+}, {
+  "name": "Raticate"
+  "gender": true,
+  "alolan": 1
+}, {
+  "name": "Spearow"
+}, {
+  "name": "Fearow"
+}, {
+  "name": "Ekans"
+}, {
+  "name": "Arbok"
+}, {
+  "name": "Pikachu"
+  "gender": true,
+  "alolan": 9
+}, {
+  "name": "Raichu"
+  "gender": true,
+  "alolan": 1
+}, {
+  "name": "Sandshrew",
+  "alolan": 1
+}, {
+  "name": "Sandslash",
+  "alolan": 1
+}, {
+  "name": "Nidoran♀"
+}, {
+  "name": "Nidorina"
+}, {
+  "name": "Nidoqueen"
+}, {
+  "name": "Nidoran♂"
+}, {
+  "name": "Nidorino"
+}, {
+  "name": "Nidoking"
+}, {
+  "name": "Clefairy"
+}, {
+  "name": "Clefable"
+}, {
+  "name": "Vulpix"
+  "alolan": 1
+}, {
+  "name": "Ninetales"
+  "alolan": 1
+}, {
+  "name": "Jigglypuff"
+}, {
+  "name": "Wigglytuff"
+}, {
+  "name": "Zubat"
+  "gender": true,
+}, {
+  "name": "Golbat"
+  "gender": true,
+}, {
+  "name": "Oddish"
+}, {
+  "name": "Gloom"
+  "gender": true,
+}, {
+  "name": "Vileplume"
+  "gender": true,
+}, {
+  "name": "Paras"
+}, {
+  "name": "Parasect"
+}, {
+  "name": "Venonat"
+}, {
+  "name": "Venomoth"
+}, {
+  "name": "Diglett"
+  "alolan": 1
+}, {
+  "name": "Dugtrio"
+  "alolan": 1
+}, {
+  "name": "Meowth"
+  "alolan": 1 "galarian": 1
+}, {
+  "name": "Persian"
+  "alolan": 1
+}, {
+  "name": "Psyduck"
+}, {
+  "name": "Golduck"
+}, {
+  "name": "Mankey"
+}, {
+  "name": "Primeape"
+}, {
+  "name": "Growlithe"
+  "hisuian": 1
+}, {
+  "name": "Arcanine"
+  "hisuian": 1
+}, {
+  "name": "Poliwag"
+}
