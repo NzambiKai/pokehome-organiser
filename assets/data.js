@@ -1,4 +1,4 @@
-[{
+let pokemon = [{
   "name": "Bulbasaur"
 }, {
   "name": "Ivysaur"
