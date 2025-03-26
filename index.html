@@ -3,10 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <title>PokeHome Organiser</title>
+<style>
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: DodgerBlue;
+  width: 800px;
+}
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 16.666%;
+  text-align: center;
+  line-height: 75px;
+  font-size: 1rem;
+}
+</style>
 </head>
 <body>
 <h1>National Dex</h1>
-<div id="nationalDexContainer"></div>
+<div id="nationalDex" class="flex-container"></div>
   <h3>0001 - 0030</h3>
   <img src="assets/images/bulbasaur.webp" alt="Bulbasaur"/>
 <h1>Alt Forms</h1>
@@ -16,9 +31,9 @@
 <script>
   let text = "";
   pokemon.forEach(myFunction);
-  document.getElementById("nationalDexContainer").innerHTML = text;
+  document.getElementById("nationalDex").innerHTML = text;
 function myFunction(pokemon, index) {
-  text += index + ": " + pokemon.name + "<br>"; 
+  text += "<div>" + index + "<br/>" + pokemon.name + "</div>"; 
 }
 </script>
 </body>
