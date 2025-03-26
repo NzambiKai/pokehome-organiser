@@ -6,18 +6,16 @@
 </head>
 <body>
 <h1>National Dex</h1>
+<div id="nationalDexContainer"></div>
   <h3>0001 - 0030</h3>
   <img src="assets/images/bulbasaur.webp" alt="Bulbasaur"/>
 <h1>Alt Forms</h1>
 <h1>Shiny National Dex</h1>
 <h1>Shiny Alt Forms</h1>
-<script 
+<script type='text/javascript' src="assets/data.js"></script>
 <script>
-  fetch(`assets/data.json`)
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-      });
+  document.getElementById("nationalDexContainer").innerHTML =
+"First pokemon is " + pokemon[0].name;
 </script>
 </body>
 </html>
