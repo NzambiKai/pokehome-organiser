@@ -1,4 +1,4 @@
-data = `[{
+let data = `[{
       "name": "Bulbasaur"
     }, {
       "name": "Ivysaur"
