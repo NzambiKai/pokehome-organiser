@@ -14,8 +14,11 @@
 <h1>Shiny Alt Forms</h1>
 <script type='text/javascript' src="assets/data.js"></script>
 <script>
-  document.getElementById("nationalDexContainer").innerHTML =
-"First pokemon is " + pokemon[0].name;
+  pokemon.forEach(myFunction);
+  document.getElementById("nationalDexContainer").innerHTML = text;
+function myFunction(name, index) {
+  text += index + ": " + name + "<br>"; 
+}
 </script>
 </body>
 </html>
