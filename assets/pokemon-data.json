@@ -1,4 +1,4 @@
-Data([{
+data = `[{
       "name": "Bulbasaur"
     }, {
       "name": "Ivysaur"
@@ -143,4 +143,4 @@ Data([{
     }, {
       "name": "Poliwag"
     }
-]);
+]`;
