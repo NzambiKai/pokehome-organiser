@@ -83,22 +83,28 @@ Data([{
       "name": "Clefable"
     }, {
       "name": "Vulpix"
+      "alolan": 1
     }, {
       "name": "Ninetales"
+      "alolan": 1
     }, {
       "name": "Jigglypuff"
     }, {
       "name": "Wigglytuff"
     }, {
       "name": "Zubat"
+      "gender": true,
     }, {
       "name": "Golbat"
+      "gender": true,
     }, {
       "name": "Oddish"
     }, {
       "name": "Gloom"
+      "gender": true,
     }, {
       "name": "Vileplume"
+      "gender": true,
     }, {
       "name": "Paras"
     }, {
@@ -109,12 +115,17 @@ Data([{
       "name": "Venomoth"
     }, {
       "name": "Diglett"
+      "alolan": 1
     }, {
       "name": "Dugtrio"
+      "alolan": 1
     }, {
       "name": "Meowth"
+      "alolan": 1
+      "galarian": 1
     }, {
       "name": "Persian"
+      "alolan": 1
     }, {
       "name": "Psyduck"
     }, {
@@ -125,8 +136,10 @@ Data([{
       "name": "Primeape"
     }, {
       "name": "Growlithe"
+      "hisuian": 1
     }, {
       "name": "Arcanine"
+      "hisuian": 1
     }, {
       "name": "Poliwag"
     }
