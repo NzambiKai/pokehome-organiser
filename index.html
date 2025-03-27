@@ -44,7 +44,7 @@ function layout(pokemon, index) {
     return insetNum.toString().padStart(4, '0');
   }
   output += "<div>#" + formatDexNumber(index) + "<br/>" + pokemon.name + "</br>" + blockIndex + "</div>";
-  if ((blockIndex) % 30 === 0) {
+  if ((blockIndex+1) % 30 === 0) {
     output += "<div>Break</div>";
   }
   blockIndex++;
