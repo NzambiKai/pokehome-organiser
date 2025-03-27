@@ -13,7 +13,6 @@ body {
     grid-template-columns: repeat(6, 1fr);
     column-gap: 1px;
     row-gap: 1px;
-    background-color: #f2f2f2;
     width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -30,12 +29,12 @@ body {
 .container > div.header {
     grid-column: 1 / -1;
     aspect-ratio: auto;
-    background-color: #cccccc;
+    background-color: white;
 }
 .container > div.subheader {
     grid-column: 1 / -1;
     aspect-ratio: auto;
-    background-color: #cccccc;
+    background-color: white;
 }
 .container > div > font {
     font-size: 0.75rem;
@@ -44,8 +43,7 @@ body {
 </style>
 </head>
 <body>
-<h1>N D</h1>
-<div id="nationalDex" class="container"></div>
+<div id="container" class="container"></div>
 <!-- <h3>0001 - 0030</h3>
 <img src="assets/images/bulbasaur.webp" alt="Bulbasaur"/>
 <h1>Alt Forms</h1>
@@ -78,8 +76,9 @@ let output = "";
 let blockIndex = 0;
 header("ND");
 pokemon.forEach(outputNationalDex);
+header("Alt Forms");
 pokemon.forEach(outputNationalDex);
-document.getElementById("nationalDex").innerHTML = output;
+document.getElementById("container").innerHTML = output;
 function header(title) {
     output += "<div class='header'><h1>" + title + "</h1></div>";
 }
