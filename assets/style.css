@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 1px;
+    row-gap: 1px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.container > div {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.container > div:not([class]) {
+    background-color: #e5e5e5;
+}
+.container > div.header {
+    grid-column: 1 / -1;
+    aspect-ratio: auto;
+    background-color: white;
+}
+.container > div.subheader {
+    grid-column: 1 / -1;
+    aspect-ratio: auto;
+    background-color: white;
+}
+.container > div > font {
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.5);
+}
