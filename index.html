@@ -31,7 +31,7 @@ body {
     aspect-ratio: auto;
     background-color: #cccccc;
 }
-.container > div > span {
+.container > div > font {
     font-size: 0.75rem;
     color: rgba(0, 0, 0, 0.5);
 }
@@ -59,7 +59,7 @@ function layout(pokemon, index) {
   if ((blockIndex) % 30 === 0) {
     output += "<div class='subheader'><h3>" + formatDexNumber(blockIndex) + " - " + formatDexNumber(blockIndex+29) + "</h3></div>";
   }
-  output += "<div><span>" + formatDexNumber(index) + "</span><br/>" + pokemon.name + "</div>";
+  output += "<div><font>" + formatDexNumber(index) + "</font><br/>" + pokemon.name + "</div>";
   blockIndex++;
 }
 </script>
