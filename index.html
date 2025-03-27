@@ -7,25 +7,21 @@
 body {
     font-family: Arial, sans-serif;
 }
-.flex-container {
-    display: flex;
-    flex-flow: row wrap;
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto;
     background-color: DodgerBlue;
     width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
-.flex-container > div {
+.container > div {
     background-color: #f1f1f1;
-    width: 100px;
-    height: 100px;
     text-align: center;
     font-size: 1rem;
 }
-.flex-container > div.subheader {
+.container > div.subheader {
     background-color: #f1f1f1;
-    width: 100%;
-    height: 100px;
     text-align: center;
     font-size: 1rem;
 }
