@@ -75,26 +75,42 @@ body {
 <script type="text/javascript" src="assets/data.js"></script> 
 <script>
 let output = "";
-let blockIndex = 0;
+//let blockIndex = 0;
 header("ND");
-pokemon.forEach(outputNationalDex);
-header("Alt Forms");
-pokemon.forEach(outputNationalDex);
+outputNationalDex();
+//pokemon.forEach(outputNationalDex);
+//header("Alt Forms");
+//pokemon.forEach(outputNationalDex);
 document.getElementById("container").innerHTML = output;
 function header(title) {
     output += "<div class='header'><h1>" + title + "</h1></div>";
 }
-function outputNationalDex(pokemon, index) {
-  function formatDexNumber(num) {
-    let insetNum = num+1;
-    return insetNum.toString().padStart(4, '0');
-  }
-  if ((blockIndex) % 30 === 0) {
-    output += "<div class='subheader'><h2>" + formatDexNumber(blockIndex) + " - " + formatDexNumber(blockIndex+29) + "</h2></div>";
-  }
-  output += "<div><font>" + formatDexNumber(index) + "</font>" + pokemon.name + "</div>";
-  blockIndex++;
+outputNationalDex() {
+    let blockIndex = 0;
+    pokemon.forEach(outputNationalDex);
+    function outputNationalDex(pokemon, index) {
+      function formatDexNumber(num) {
+        let insetNum = num+1;
+        return insetNum.toString().padStart(4, '0');
+      }
+      if ((blockIndex) % 30 === 0) {
+        output += "<div class='subheader'><h2>" + formatDexNumber(blockIndex) + " - " + formatDexNumber(blockIndex+29) + "</h2></div>";
+      }
+      output += "<div><font>" + formatDexNumber(index) + "</font>" + pokemon.name + "</div>";
+      blockIndex++;
+    }
 }
+// function outputNationalDex(pokemon, index) {
+//   function formatDexNumber(num) {
+//     let insetNum = num+1;
+//     return insetNum.toString().padStart(4, '0');
+//   }
+//   if ((blockIndex) % 30 === 0) {
+//     output += "<div class='subheader'><h2>" + formatDexNumber(blockIndex) + " - " + formatDexNumber(blockIndex+29) + "</h2></div>";
+//   }
+//   output += "<div><font>" + formatDexNumber(index) + "</font>" + pokemon.name + "</div>";
+//   blockIndex++;
+// }
 </script>
 </body>
 </html>
