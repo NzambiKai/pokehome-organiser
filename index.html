@@ -77,7 +77,7 @@ body {
 let output = "";
 let blockIndex = 0;
 header("ND");
-pokemon.forEach(outputNationalDex(pokemon, index));
+pokemon.forEach(outputNationalDex);
 header("Alt Forms");
 pokemon.forEach(outputNationalDex);
 document.getElementById("container").innerHTML = output;
