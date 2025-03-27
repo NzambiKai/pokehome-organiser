@@ -60,7 +60,7 @@ function layout(pokemon, index) {
   if ((blockIndex) % 30 === 0) {
     output += "<div class='subheader'><h3>" + formatDexNumber(blockIndex) + " - " + formatDexNumber(blockIndex+29) + "</h3></div>";
   }
-  output += "<div><font>" + formatDexNumber(index) + "</font><br/>" + pokemon.name + "</div>";
+  output += "<div><font>" + formatDexNumber(index) + "</font>" + pokemon.name + "</div>";
   blockIndex++;
 }
 </script>
