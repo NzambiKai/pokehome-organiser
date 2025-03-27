@@ -84,7 +84,7 @@ document.getElementById("container").innerHTML = output;
 function header(title) {
     output += "<div class='header'><h1>" + title + "</h1></div>";
 }
-function outputNationalDex(pokemon, index) {
+function outputNationalDex() { //pokemon, index
   function formatDexNumber(num) {
     let insetNum = num+1;
     return insetNum.toString().padStart(4, '0');
