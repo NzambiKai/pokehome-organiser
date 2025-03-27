@@ -6,6 +6,7 @@
 <style>
 body {
     font-family: Arial, sans-serif;
+    font-size: 1rem;
 }
 .container {
     display: grid;
@@ -24,12 +25,15 @@ body {
     align-items: center;
     background-color: #e5e5e5;
     text-align: center;
-    font-size: 1rem;
 }
 .container > div.subheader {
     grid-column: 1 / -1;
     aspect-ratio: auto;
     background-color: #cccccc;
+}
+.container > div > span {
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.5);
 }
 </style>
 </head>
@@ -55,7 +59,7 @@ function layout(pokemon, index) {
   if ((blockIndex) % 30 === 0) {
     output += "<div class='subheader'><h3>" + formatDexNumber(blockIndex) + " - " + formatDexNumber(blockIndex+29) + "</h3></div>";
   }
-  output += "<div>" + formatDexNumber(index) + "<br/>" + pokemon.name + "</div>";
+  output += "<div><span>" + formatDexNumber(index) + "</span><br/>" + pokemon.name + "</div>";
   blockIndex++;
 }
 </script>
