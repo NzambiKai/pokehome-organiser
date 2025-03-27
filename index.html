@@ -3,46 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>PokeHome Organiser</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-}
-.container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    column-gap: 1px;
-    row-gap: 1px;
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.container > div {
-    aspect-ratio: 1 / 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.container > div:not([class]) {
-    background-color: #e5e5e5;
-}
-.container > div.header {
-    grid-column: 1 / -1;
-    aspect-ratio: auto;
-    background-color: white;
-}
-.container > div.subheader {
-    grid-column: 1 / -1;
-    aspect-ratio: auto;
-    background-color: white;
-}
-.container > div > font {
-    font-size: 0.75rem;
-    color: rgba(0, 0, 0, 0.5);
-}
-</style>
+<link href="assets/style.css" rel="stylesheet">
 </head>
 <body>
 <div id="container" class="container"></div>
@@ -79,7 +40,7 @@ let output = "";
 header("ND");
 outputNationalDex();
 header("Alt Forms");
-outputNationalDex();
+outputAltForm("Alolan Forms 1");
 //pokemon.forEach(outputNationalDex);
 //header("Alt Forms");
 //pokemon.forEach(outputNationalDex);
@@ -102,17 +63,21 @@ function outputNationalDex() {
       blockIndex++;
     }
 }
-// function outputNationalDex(pokemon, index) {
-//   function formatDexNumber(num) {
-//     let insetNum = num+1;
-//     return insetNum.toString().padStart(4, '0');
-//   }
-//   if ((blockIndex) % 30 === 0) {
-//     output += "<div class='subheader'><h2>" + formatDexNumber(blockIndex) + " - " + formatDexNumber(blockIndex+29) + "</h2></div>";
-//   }
-//   output += "<div><font>" + formatDexNumber(index) + "</font>" + pokemon.name + "</div>";
-//   blockIndex++;
-// }
+function outputAltForm(title) {
+    let blockIndex = 0;
+    pokemon.forEach(outputNationalDex);
+    function outputNationalDex(pokemon, index) {
+      function formatDexNumber(num) {
+        let insetNum = num+1;
+        return insetNum.toString().padStart(4, '0');
+      }
+      if ((blockIndex) % 30 === 0) {
+        output += "<div class='subheader'><h2>" + formatDexNumber(blockIndex) + " - " + formatDexNumber(blockIndex+29) + "</h2></div>";
+      }
+      output += "<div><font>" + formatDexNumber(index) + "</font>" + pokemon.name + "</div>";
+      blockIndex++;
+    }
+}
 </script>
 </body>
 </html>
