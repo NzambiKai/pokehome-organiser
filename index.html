@@ -45,7 +45,7 @@ function layout(pokemon, index) {
     return insetNum.toString().padStart(4, '0');
   }
   if ((blockIndex) % 30 === 0) {
-    output += "<div class='subheader'>" + formatDexNumber(blockIndex) + " - " + formatDexNumber(blockIndex) + "</div>";
+    output += "<div class='subheader'>" + formatDexNumber(blockIndex) + " - " + formatDexNumber(blockIndex+30) + "</div>";
   }
   output += "<div>#" + formatDexNumber(index) + "<br/>" + pokemon.name + "</br>" + blockIndex + "</div>";
   blockIndex++;
