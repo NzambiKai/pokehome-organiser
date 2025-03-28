@@ -14,15 +14,15 @@ let output = "";
 //header("ND");
 //outputNationalDex();
 header("Alt Forms");
-outputAltForm("Alolan Forms 1");
+outputAltForm("Alolan");
 document.getElementById("container").innerHTML = output;
 function header(title) {
     output += "<div class='header'><h1>" + title + "</h1></div>";
 }
 function outputNationalDex() {
     let blockIndex = 0;
-    pokemon.forEach(outputNationalDex);
-    function outputNationalDex(pokemon, index) {
+    pokemon.forEach(outputDexItems);
+    function outputDexItems(pokemon, index) {
       function formatDexNumber(num) {
         let insetNum = num+1;
         return insetNum.toString().padStart(4, '0');
@@ -36,14 +36,15 @@ function outputNationalDex() {
 }
 function outputAltForm(title) {
     let blockIndex = 0;
-    pokemon.forEach(outputNationalDex);
-    function outputNationalDex(pokemon, index) {
+    let lowercaseTitle = "alolan"
+    pokemon.filter(item => lowercaseTitle in item).forEach(outputDexItems);
+    function outputDexItems(pokemon, index) {
       function formatDexNumber(num) {
         let insetNum = num+1;
         return insetNum.toString().padStart(4, '0');
       }
       if ((blockIndex) % 30 === 0) {
-        output += "<div class='subheader'><h2>" + formatDexNumber(blockIndex) + " - " + formatDexNumber(blockIndex+29) + "</h2></div>";
+        output += "<div class='subheader'><h2>" + Title + " Forms 1</h2></div>";
       }
       output += "<div><font>" + formatDexNumber(index) + "</font>" + pokemon.name + "</div>";
       blockIndex++;
