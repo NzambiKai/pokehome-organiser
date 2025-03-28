@@ -36,7 +36,7 @@ function outputNationalDex() {
 }
 function outputAltForm(title) {
     let blockIndex = 0;
-    let lowercaseTitle = "alolan"
+    let lowercaseTitle = title.toLowerCase()
     pokemon.filter(item => lowercaseTitle in item).forEach(outputDexItems);
     function outputDexItems(pokemon, index) {
       function formatDexNumber(num) {
@@ -46,7 +46,7 @@ function outputAltForm(title) {
       if ((blockIndex) % 30 === 0) {
         output += "<div class='subheader'><h2>" + title + " Forms 1</h2></div>";
       }
-      output += "<div><font>" + formatDexNumber(index) + "</font>" + pokemon.name + "<br/>0" + pokemon["alolan"] + "</div>";
+      output += "<div><font>" + formatDexNumber(index) + "</font>" + pokemon.name + "<br/>0" + pokemon[lowercaseTitle] + "</div>";
       blockIndex++;
     }
 }
