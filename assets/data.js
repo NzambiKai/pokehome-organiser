@@ -54,7 +54,7 @@ const pokemon = [{
 }, {
   "name": "Pikachu",
   "gender": true,
-  "alolan": 9
+  "alt": 9
 }, {
   "name": "Raichu",
   "gender": true,
