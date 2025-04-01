@@ -20,7 +20,7 @@ function header(title) {
     output += "<div class='header'><h1>" + title + "</h1></div>";
 }
 function outputNationalDex() {
-    let blockIndex = 1;
+    let blockIndex = 0;
     pokemon.forEach(outputDexItems);
     function outputDexItems(pokemon, index) {
       function formatDexNumber(num) {
