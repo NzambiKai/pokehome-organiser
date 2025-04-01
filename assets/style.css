@@ -37,6 +37,7 @@ body {
     color: rgba(0, 0, 0, 0.5);
 }
 .container > div > img {
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
 }
