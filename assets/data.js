@@ -1,145 +1,205 @@
 const pokemon = [{
+  "number": 1,
   "name": "Bulbasaur"
 }, {
+  "number": 2,
   "name": "Ivysaur"
 }, {
+  "number": 3,
   "name": "Venusaur",
   "gender": true
 }, {
+  "number": 4,
   "name": "Charmander"
 }, {
+  "number": 5,
   "name": "Charmeleon"
 }, {
+  "number": 6,
   "name": "Charizard"
 }, {
+  "number": 7,
   "name": "Squirtle"
 }, {
+  "number": 8,
   "name": "Wartortle"
 }, {
+  "number": 9,
   "name": "Blastoise"
 }, {
+  "number": 10,
   "name": "Caterpie"
 }, {
+  "number": 11,
   "name": "Metapod"
 }, {
+  "number": 12,
   "name": "Butterfree"
 }, {
+  "number": 13,
   "name": "Weedle"
 }, {
+  "number": 14,
   "name": "Kakuna"
 }, {
+  "number": 15,
   "name": "Beedrill"
 }, {
+  "number": 16,
   "name": "Pidgey"
 }, {
+  "number": 17,
   "name": "Pidgeotto"
 }, {
+  "number": 18,
   "name": "Pidgeot"
 }, {
+  "number": 19,
   "name": "Rattata",
   "gender": true,
   "alolan": 1
 }, {
+  "number": 20,
   "name": "Raticate",
   "gender": true,
   "alolan": 1
 }, {
+  "number": 21,
   "name": "Spearow"
 }, {
+  "number": 22,
   "name": "Fearow"
 }, {
+  "number": 23,
   "name": "Ekans"
 }, {
+  "number": 24,
   "name": "Arbok"
 }, {
+  "number": 25,
   "name": "Pikachu",
   "gender": true,
   "alt": 9
 }, {
+  "number": 26,
   "name": "Raichu",
   "gender": true,
   "alolan": 1
 }, {
+  "number": 27,
   "name": "Sandshrew",
   "alolan": 1
 }, {
+  "number": 28,
   "name": "Sandslash",
   "alolan": 1
 }, {
+  "number": 29,
   "name": "Nidoran♀"
 }, {
+  "number": 30,
   "name": "Nidorina"
 }, {
+  "number": 31,
   "name": "Nidoqueen"
 }, {
+  "number": 32,
   "name": "Nidoran♂"
 }, {
+  "number": 33,
   "name": "Nidorino"
 }, {
+  "number": 34,
   "name": "Nidoking"
 }, {
+  "number": 35,
   "name": "Clefairy"
 }, {
+  "number": 36,
   "name": "Clefable"
 }, {
+  "number": 37,
   "name": "Vulpix",
   "alolan": 1
 }, {
+  "number": 38,
   "name": "Ninetales",
   "alolan": 1
 }, {
+  "number": 39,
   "name": "Jigglypuff"
 }, {
+  "number": 40,
   "name": "Wigglytuff"
 }, {
+  "number": 41,
   "name": "Zubat",
   "gender": true
 }, {
+  "number": 42,
   "name": "Golbat",
   "gender": true
 }, {
+  "number": 43,
   "name": "Oddish"
 }, {
+  "number": 44,
   "name": "Gloom",
   "gender": true
 }, {
+  "number": 45,
   "name": "Vileplume",
   "gender": true
 }, {
+  "number": 46,
   "name": "Paras"
 }, {
+  "number": 47,
   "name": "Parasect"
 }, {
+  "number": 48,
   "name": "Venonat"
 }, {
+  "number": 49,
   "name": "Venomoth"
 }, {
+  "number": 50,
   "name": "Diglett",
   "alolan": 1
 }, {
+  "number": 51,
   "name": "Dugtrio",
   "alolan": 1
 }, {
+  "number": 52,
   "name": "Meowth",
   "alolan": 1,
   "galarian": 1
 }, {
+  "number": 53,
   "name": "Persian",
   "alolan": 1
 }, {
+  "number": 54,
   "name": "Psyduck"
 }, {
+  "number": 55,
   "name": "Golduck"
 }, {
+  "number": 56,
   "name": "Mankey"
 }, {
+  "number": 57,
   "name": "Primeape"
 }, {
+  "number": 58,
   "name": "Growlithe",
   "hisuian": 1
 }, {
+  "number": 59,
   "name": "Arcanine",
   "hisuian": 1
 }, {
+  "number": 60,
   "name": "Poliwag"
 }]
