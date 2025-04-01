@@ -30,7 +30,7 @@ function outputNationalDex() {
       if ((blockIndex) % 30 === 0) {
         output += "<div class='subheader'><h2>" + formatDexNumber(blockIndex) + " - " + formatDexNumber(blockIndex+29) + "</h2></div>";
       }
-      output += "<div><font>" + formatDexNumber(index) + "</font>" + pokemon.name + "</div>";
+      output += "<div><font>" + formatDexNumber(pokemon.number) + "</font>" + pokemon.name + "</div>";
       blockIndex++;
     }
 }
