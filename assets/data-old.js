@@ -1,4 +1,4 @@
-Data([{
+const pokemon = [{
       "name": "Bulbasaur"
     }, {
       "name": "Ivysaur"
@@ -2014,5 +2014,4 @@ Data([{
       "name": "Koraidon"
     }, {
       "name": "Miraidon"
-    }
-]);
+    }];
