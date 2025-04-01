@@ -15,7 +15,7 @@ document.getElementById("container").innerHTML = output;
 function outputNationalDex() {
     pokemon.forEach(outputDexItems);
     function outputDexItems(pokemon, index) {
-      output += pokemon.name;//`{ "number": ` + index+1 + `, "name": "` + pokemon.name + `", },`;
+      output += pokemon.name + ", ";//`{ "number": ` + index+1 + `, "name": "` + pokemon.name + `", },`;
     }
 }
 </script>
