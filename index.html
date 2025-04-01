@@ -23,7 +23,7 @@ function outputNationalDex() {
     let blockIndex = 0;
     pokemon.forEach(outputDexItems);
     function outputDexItems(pokemon, index) {
-      var lowercasePokemonName = pokemon.name.toLowerCase
+      var lowercasePokemonName = pokemon.name.toLowerCase();
       function formatDexNumber(num) {
         let insetNum = num;
         return insetNum.toString().padStart(4, '0');
@@ -37,7 +37,7 @@ function outputNationalDex() {
 }
 function outputAltForm(title) {
     let blockIndex = 0;
-    let lowercaseTitle = title.toLowerCase()
+    let lowercaseTitle = title.toLowerCase();
     pokemon.filter(item => lowercaseTitle in item).forEach(outputDexItems);
     function outputDexItems(pokemon, index) {
       function formatDexNumber(num) {
