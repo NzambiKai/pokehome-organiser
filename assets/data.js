@@ -202,4 +202,7 @@ const pokemon = [{
 }, {
   "number": 60,
   "name": "Poliwag"
+}, {
+  "number": 61,
+  "name": ""
 }]
