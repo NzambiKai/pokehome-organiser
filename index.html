@@ -23,6 +23,7 @@ function outputNationalDex() {
     let blockIndex = 0;
     pokemon.forEach(outputDexItems);
     function outputDexItems(pokemon, index) {
+      var lowercasePokemonName = pokemon.name.toLowerCase
       function formatDexNumber(num) {
         let insetNum = num;
         return insetNum.toString().padStart(4, '0');
@@ -30,7 +31,7 @@ function outputNationalDex() {
       if ((blockIndex) % 30 === 0) {
         output += "<div class='subheader'><h2>" + formatDexNumber(blockIndex+1) + " - " + formatDexNumber(blockIndex+30) + "</h2></div>";
       }
-      output += "<div><font>" + formatDexNumber(pokemon.number) + "</font>" + pokemon.name + "</div>";
+      output += "<div><img src='assets/images/" + lowercasePokemonName + ".webp' alt='" + pokemon.name + "'/><font>" + formatDexNumber(pokemon.number) + "</font>" + pokemon.name + "</div>";
       blockIndex++;
     }
 }
