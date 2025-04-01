@@ -28,7 +28,7 @@ function outputNationalDex() {
         return insetNum.toString().padStart(4, '0');
       }
       if ((blockIndex) % 30 === 0) {
-        output += "<div class='subheader'><h2>" + formatDexNumber(blockIndex) + " - " + formatDexNumber(blockIndex+29) + "</h2></div>";
+        output += "<div class='subheader'><h2>" + formatDexNumber(blockIndex+1) + " - " + formatDexNumber(blockIndex+30) + "</h2></div>";
       }
       output += "<div><font>" + formatDexNumber(pokemon.number) + "</font>" + pokemon.name + "</div>";
       blockIndex++;
