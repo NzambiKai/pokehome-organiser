@@ -21,7 +21,7 @@ body {
 }
 .container > div:not([class]) {
     /* background-color: #e5e5e5; */
-    background-image: radial-gradient(#d9f9ec, #fafbf5)
+    background-image: radial-gradient(#d9f9ec, #fafbf5 60%);
 }
 .container > div.header {
     grid-column: 1 / -1;
