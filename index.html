@@ -28,7 +28,14 @@ function outputNationalDex() {
         return insetNum.toString().padStart(4, '0');
       }
       function imagePathFor(name) {
-        var lowercasePokemonName = pokemon.name.toLowerCase().replace("♀", "-m").replace("♂", "-f").replace("’", "").replace(".", "").replace("é", "e").replace(":", "").replace(" ", "-");
+        var lowercasePokemonName = pokemon.name.toLowerCase()
+          .replace(/♀/g, '-m')
+          .replace(/♂/g, '-f')
+          .replace(/’/g, '')
+          .replace(/\./g, '')
+          .replace(/é/g, 'e')
+          .replace(/:/g, '')
+          .replace(/\s+/g, '-');
         return "assets/images/" + lowercasePokemonName + ".webp";
       }
       if ((blockIndex) % 30 === 0) {
