@@ -7,8 +7,6 @@ body {
 .container {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    column-gap: 1px;
-    row-gap: 1px;
     width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -33,7 +31,7 @@ body {
     grid-column: 1 / -1;
     aspect-ratio: auto;
     background-color: #11a7a8;
-    border-radius: 10px;
+    border-radius: 5rem 5rem 0rem;
 }
 .container > div > font {
     font-size: 0.75rem;
