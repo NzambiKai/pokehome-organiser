@@ -64,6 +64,10 @@ function outputAltForm(title) {
       output += "<div><font>" + formatDexNumber(pokemon.number) + "</font>" + pokemon.name + "<br/>" + pokemon[lowercaseTitle] + "</div>";
       blockIndex++;
     }
+    let endBlankBlocks = 30 - (pokemon.length % 30);
+    for (let i = 0; i < endBlankBlocks; i++) {
+      output += "<div></div>";
+    }
 }
 </script>
 </body>

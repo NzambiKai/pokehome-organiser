@@ -20,7 +20,8 @@ body {
     text-align: center;
 }
 .container > div:not([class]) {
-    background-color: #e5e5e5;
+    /* background-color: #e5e5e5; */
+    background-image: radial-gradient(#d9f9ec, #fafbf5)
 }
 .container > div.header {
     grid-column: 1 / -1;
