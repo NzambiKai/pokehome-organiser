@@ -28,12 +28,11 @@ body {
 .container > div.header {
     grid-column: 1 / -1;
     aspect-ratio: auto;
-    background-color: #11a7a8;
 }
 .container > div.subheader {
     grid-column: 1 / -1;
     aspect-ratio: auto;
-    background-color: white;
+    background-color: #11a7a8;
 }
 .container > div > font {
     font-size: 0.75rem;
