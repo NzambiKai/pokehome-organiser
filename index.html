@@ -28,7 +28,7 @@ function outputNationalDex() {
         return insetNum.toString().padStart(4, '0');
       }
       function imagePathFor(name) {
-        var lowercasePokemonName = pokemon.name.toLowerCase();
+        var lowercasePokemonName = pokemon.name.toLowerCase().replace("♀", "-m").replace("♂", "-f");
         return "assets/images/" + lowercasePokemonName + ".webp";
       }
       if ((blockIndex) % 30 === 0) {
