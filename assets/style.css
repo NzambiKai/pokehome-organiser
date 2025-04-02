@@ -1,6 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     font-size: 1rem;
+    background-image: linear-gradient(to bottom, #d7f89d, #92e5cb);
+    background-attachment: fixed;
 }
 .container {
     display: grid;
@@ -21,12 +23,12 @@ body {
 }
 .container > div:not([class]) {
     /* background-color: #e5e5e5; */
-    background-image: radial-gradient(#d9f9ec, #fafbf5 60%);
+    background-image: radial-gradient(#d9f9ec, #fafbf5 75%);
 }
 .container > div.header {
     grid-column: 1 / -1;
     aspect-ratio: auto;
-    background-color: white;
+    background-color: #11a7a8;
 }
 .container > div.subheader {
     grid-column: 1 / -1;
