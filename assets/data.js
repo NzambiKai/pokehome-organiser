@@ -3022,6 +3022,57 @@ const pokemon = [{
 }, {
   "number": 1008,
   "name": "Miraidon",
+}, {
+  "number": 1009,
+  "name": "Walking Wake",
+}, {
+  "number": 1010,
+  "name": "Iron Leaves",
+}, {
+  "number": 1011,
+  "name": "Dipplin",
+}, {
+  "number": 1012,
+  "name": "Poltchageist",
+}, {
+  "number": 1013,
+  "name": "Sinistcha",
+}, {
+  "number": 1014,
+  "name": "Okidogi",
+}, {
+  "number": 1015,
+  "name": "Munkidori",
+}, {
+  "number": 1016,
+  "name": "Fezandipiti",
+}, {
+  "number": 1017,
+  "name": "Ogerpon",
+}, {
+  "number": 1018,
+  "name": "Archaludon",
+}, {
+  "number": 1019,
+  "name": "Hydrapple",
+}, {
+  "number": 1020,
+  "name": "Gouging Fire",
+}, {
+  "number": 1021,
+  "name": "Raging Bolt",
+}, {
+  "number": 1022,
+  "name": "Iron Boulder",
+}, {
+  "number": 1023,
+  "name": "Iron Crown",
+}, {
+  "number": 1024,
+  "name": "Terapagos",
+}, {
+  "number": 1025,
+  "name": "Pecharunt",
 }];
 
   
