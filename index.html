@@ -44,6 +44,10 @@ function outputNationalDex() {
       output += "<div><img src='" + imagePathFor(pokemon.name) + "' alt='" + pokemon.name + "'/><font>" + formatDexNumber(pokemon.number) + "</font>" + pokemon.name + "</div>";
       blockIndex++;
     }
+    let endBlankBlocks = 30 - (pokemon.length % 30);
+    for (let i = 0; i < endBlankBlocks; i++) {
+      output += "<div></div>";
+    }
 }
 function outputAltForm(title) {
     let blockIndex = 0;
