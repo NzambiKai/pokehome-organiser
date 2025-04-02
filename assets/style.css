@@ -31,7 +31,13 @@ body {
     grid-column: 1 / -1;
     aspect-ratio: auto;
     background-color: #11a7a8;
-    border-radius: 5rem 5rem 0rem;
+    border-radius: 5rem 5rem 0rem 0rem;
+}
+.container > div.break {
+    grid-column: 1 / -1;
+    aspect-ratio: auto;
+    background-color: #fafbf5;
+    border-radius: 0rem 0rem 5rem 5rem;
 }
 .container > div > font {
     font-size: 0.75rem;
