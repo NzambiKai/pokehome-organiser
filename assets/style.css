@@ -33,6 +33,7 @@ body {
     grid-column: 1 / -1;
     aspect-ratio: auto;
     background-color: #11a7a8;
+    border-radius: 10px, 10px, 0px, 0px;
 }
 .container > div > font {
     font-size: 0.75rem;
