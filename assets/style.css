@@ -12,7 +12,7 @@ body {
 .container > div.card {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    background-color: #d9f9ec;
+    background-color: #fafbf5;
     border-radius: 1rem;
     margin-bottom:2rem;
 }
@@ -26,7 +26,7 @@ body {
 }
 .container > div.card > div:not([class]) {
     /* background-color: #e5e5e5; */
-    background-image: radial-gradient(#d9f9ec, #fafbf5 75%);
+    background-image: radial-gradient(rgba(217, 249, 236, 1), rgba(217, 249, 236, 0) 75%);
 }
 .container > div.card > div.header {
     grid-column: 1 / -1;
