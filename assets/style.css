@@ -27,24 +27,24 @@ body {
     grid-column: 1 / -1;
     aspect-ratio: auto;
 }
-.container > div.subheader {
+.container > div.card > div.subheader {
     grid-column: 1 / -1;
     aspect-ratio: auto;
     background-color: #11a7a8;
     border-radius: 1rem 1rem 0rem 0rem;
 }
-.container > div.break {
+.container > div.card > div.break {
     grid-column: 1 / -1;
     aspect-ratio: auto;
     background-color: #fafbf5;
     border-radius: 0rem 0rem 1rem 1rem;
     margin-bottom: 2rem;
 }
-.container > div > font {
+.container > div.card > div > font {
     font-size: 0.75rem;
     color: rgba(0, 0, 0, 0.5);
 }
-.container > div > img {
+.container > div.card > div > img {
     width: 4rem;
     height: 4rem;
     margin-bottom: 1rem;

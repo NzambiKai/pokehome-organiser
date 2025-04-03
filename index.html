@@ -21,6 +21,7 @@ function header(title) {
 }
 function outputNationalDex() {
     let blockIndex = 0;
+    output += "<div class='card'>";
     pokemon.forEach(outputDexItems);
     function outputDexItems(pokemon, index) {
       function formatDexNumber(num) {
@@ -51,6 +52,7 @@ function outputNationalDex() {
     for (let i = 0; i < endBlankBlocks; i++) {
       output += "<div></div>";
     }
+    output += "</div>";
 }
 function outputAltForm(title) {
     let blockIndex = 0;
