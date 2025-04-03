@@ -35,7 +35,7 @@ body {
 .container > div.card > div.subheader {
     grid-column: 1 / -1;
     aspect-ratio: auto;
-    background-color: #11a7a8;
+    /* background-color: #11a7a8; */
     /* border-radius: 1rem 1rem 0rem 0rem; */
 }
 .container > div.card > div > font {
