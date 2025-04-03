@@ -41,17 +41,17 @@ function outputNationalDex() {
       }
       if ((blockIndex) % 30 === 0) {
         if (blockIndex != 0) {
-          output += "<div class='break'>Test</div>";
+          output += "</div><div class='card'>";
         }
         output += "<div class='subheader'><h2>" + formatDexNumber(blockIndex+1) + " - " + formatDexNumber(blockIndex+30) + "</h2></div>";
       }
       output += "<div><img src='" + imagePathFor(pokemon.name) + "' alt='" + pokemon.name + "'/><font>" + formatDexNumber(pokemon.number) + "</font>" + pokemon.name + "</div>";
       blockIndex++;
     }
-    // let endBlankBlocks = 30 - (pokemon.length % 30);
-    // for (let i = 0; i < endBlankBlocks; i++) {
-    //   output += "<div></div>";
-    // }
+    let endBlankBlocks = 30 - (pokemon.length % 30);
+    for (let i = 0; i < endBlankBlocks; i++) {
+      output += "<div></div>";
+    }
     output += "</div>";
 }
 function outputAltForm(title) {
