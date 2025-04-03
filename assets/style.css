@@ -12,6 +12,8 @@ body {
 .container > div.card {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    background-color: #d9f9ec;
+    border-radius: 1rem;
 }
 .container > div.card  > div {
     aspect-ratio: 1 / 1;
@@ -33,14 +35,7 @@ body {
     grid-column: 1 / -1;
     aspect-ratio: auto;
     background-color: #11a7a8;
-    border-radius: 1rem 1rem 0rem 0rem;
-}
-.container > div.card > div.break {
-    grid-column: 1 / -1;
-    aspect-ratio: auto;
-    background-color: #fafbf5;
-    border-radius: 0rem 0rem 1rem 1rem;
-    margin-bottom: 2rem;
+    /* border-radius: 1rem 1rem 0rem 0rem; */
 }
 .container > div.card > div > font {
     font-size: 0.75rem;
