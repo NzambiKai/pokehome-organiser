@@ -3,6 +3,7 @@ body {
     font-size: 1rem;
     background-image: linear-gradient(to bottom, #d7f89d, #92e5cb);
     background-attachment: fixed;
+    color: #253933;
 }
 .container {
     width: 800px;
@@ -41,7 +42,7 @@ body {
 }
 .container > div.card > div > font {
     font-size: 0.75rem;
-    color: rgba(0, 0, 0, 0.5);
+    color: #92e5cb;
 }
 .container > div.card > div > img {
     width: 4rem;
