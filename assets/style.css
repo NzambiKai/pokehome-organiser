@@ -13,7 +13,9 @@ body {
 .container > div.card {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    background-color: #fafbf5;
+    gap: 1px 1px;
+    background-color: #11a7a8; /* #fafbf5; */
+    padding: 3px;
     border-radius: 1rem;
     margin-bottom: 4rem;
     padding-bottom: 1rem;
@@ -30,7 +32,7 @@ body {
     text-align: center;
 }
 .container > div.card > div:not([class]) {
-    background-image: radial-gradient(rgba(217, 249, 236, 1), rgba(217, 249, 236, 0) 75%);
+    background-image: radial-gradient(rgba(217, 249, 236, 1), #fafbf3 75%); /* rgba(217, 249, 236, 0) 75%); */
 }
 .container > div.card > div.header, .container > div.card > div.subheader {
     grid-column: 1 / -1;
