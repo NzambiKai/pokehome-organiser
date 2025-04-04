@@ -15,7 +15,7 @@ body {
     grid-template-columns: repeat(6, 1fr);
     gap: 1px 1px;
     background-color: #11a7a8; /* #fafbf5; */
-    padding: 3px;
+    padding: 1px;
     border-radius: 1rem;
     margin-bottom: 4rem;
     padding-bottom: 1rem;
@@ -41,6 +41,7 @@ body {
 .container > div.card > div.subheader > h2 {
     font-weight: normal;
     font-size: 2rem;
+    color: #FFF;
 }
 .container > div.card > div > font {
     font-size: 0.75rem;
