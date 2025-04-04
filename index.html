@@ -45,14 +45,14 @@ function outputNationalDex() {
         }
         output += "<div class='subheader'><h2>" + formatDexNumber(blockIndex+1) + " - " + formatDexNumber(blockIndex+30) + "</h2></div>";
       }
-      let classBlock = "";
-      if ((blockIndex) % 24 === 0) {
-        classBlock += "class='bottomLeftBlock'";
-      }
-      if ((blockIndex) % 29 === 0) {
-        classBlock += "class='bottomRightBlock'";
-      }
-      output += "<div " + classBlock + "><img src='" + imagePathFor(pokemon.name) + "' alt='" + pokemon.name + "'/><font>" + formatDexNumber(pokemon.number) + "</font>" + pokemon.name + "</div>";
+      // let classBlock = "";
+      // if ((blockIndex) % 24 === 0) {
+      //   classBlock += "class='bottomLeftBlock'";
+      // }
+      // if ((blockIndex) % 29 === 0) {
+      //   classBlock += "class='bottomRightBlock'";
+      // }
+      output += "<div><img src='" + imagePathFor(pokemon.name) + "' alt='" + pokemon.name + "'/><font>" + formatDexNumber(pokemon.number) + "</font>" + pokemon.name + "</div>";
       blockIndex++;
     }
     let endBlankBlocks = 30 - (pokemon.length % 30);
