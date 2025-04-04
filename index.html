@@ -21,6 +21,7 @@ function header(title) {
 }
 function outputNationalDex() {
     let blockIndex = 0;
+    let subBlockIndex = 0;
     output += "<div class='card'>";
     pokemon.forEach(outputDexItems);
     function outputDexItems(pokemon, index) {
@@ -44,16 +45,18 @@ function outputNationalDex() {
           output += "</div><div class='card'>";
         }
         output += "<div class='subheader'><h2>" + formatDexNumber(blockIndex+1) + " - " + formatDexNumber(blockIndex+30) + "</h2></div>";
+        subBlockIndex = 0;
       }
-      // let classBlock = "";
-      // if ((blockIndex) % 24 === 0) {
-      //   classBlock += "class='bottomLeftBlock'";
-      // }
-      // if ((blockIndex) % 29 === 0) {
-      //   classBlock += "class='bottomRightBlock'";
-      // }
-      output += "<div><img src='" + imagePathFor(pokemon.name) + "' alt='" + pokemon.name + "'/><font>" + formatDexNumber(pokemon.number) + "</font>" + pokemon.name + "</div>";
+      let classBlock = "";
+      if (subBlockIndex === 1) {
+        classBlock += "class='bottomLeftBlock'";
+      }
+      if (subBlockIndex === 29) {
+        classBlock += "class='bottomRightBlock'";
+      }
+      output += "<div " + classBlock + "><img src='" + imagePathFor(pokemon.name) + "' alt='" + pokemon.name + "'/><font>" + formatDexNumber(pokemon.number) + " | " + subBlockIndex + "</font>" + pokemon.name + "</div>";
       blockIndex++;
+      subBlockIndex++;
     }
     let endBlankBlocks = 30 - (pokemon.length % 30);
     for (let i = 0; i < endBlankBlocks; i++) {
