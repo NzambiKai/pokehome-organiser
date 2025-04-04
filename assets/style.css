@@ -34,7 +34,7 @@ body {
 .container > div.card > div.bottomLeftBlock {
     padding-bottom: 0rem 0rem 1rem 0rem;
 }
-.container > div.card > div:not([class]) {
+.container > div.card > div:not([class]), .container > div.card > div.bottomLeftBlock {
     background-image: radial-gradient(rgba(217, 249, 236, 1), #fafbf3 75%); /* rgba(217, 249, 236, 0) 75%); */
 }
 .container > div.card > div.header, .container > div.card > div.subheader {
