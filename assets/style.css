@@ -30,12 +30,12 @@ body {
     text-align: center;
 }
 .container > div.card > div.bottomLeftBlock {
-    border-radius: 0rem 0rem 1rem 0rem;
+    border-radius: 0rem 0rem 0rem 1rem;
 }
 .container > div.card > div.bottomRightBlock {
     border-radius: 0rem 0rem 1rem 0rem;
 }
-.container > div.card > div:not([class]), .container > div.card > div.bottomLeftBlock {
+.container > div.card > div:not([class]), .container > div.card > div.bottomLeftBlock, .container > div.card > div.bottomRightBlock {
     background-image: radial-gradient(rgba(217, 249, 236, 1), #fafbf3 75%); /* rgba(217, 249, 236, 0) 75%); */
 }
 .container > div.card > div.header, .container > div.card > div.subheader {
