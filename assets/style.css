@@ -31,6 +31,9 @@ body {
     align-items: center;
     text-align: center;
 }
+.container > div.card > div.bottomLeftBlock {
+    padding-bottom: 0rem 0rem 1rem 0rem;
+}
 .container > div.card > div:not([class]) {
     background-image: radial-gradient(rgba(217, 249, 236, 1), #fafbf3 75%); /* rgba(217, 249, 236, 0) 75%); */
 }
