@@ -17,9 +17,9 @@ body {
     border-radius: 1rem;
     margin-bottom: 4rem;
     padding-bottom: 1rem;
-    box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.5);
-    -webkit-box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.25);
 }
 .container > div.card  > div {
     aspect-ratio: 1 / 1;
@@ -42,7 +42,7 @@ body {
 }
 .container > div.card > div > font {
     font-size: 0.75rem;
-    color: #92e5cb;
+    color: #929c99;
 }
 .container > div.card > div > img {
     width: 4rem;
