@@ -45,7 +45,7 @@ function outputNationalDex() {
         }
         output += "<div class='subheader'><h2>" + formatDexNumber(blockIndex+1) + " - " + formatDexNumber(blockIndex+30) + "</h2></div>";
       }
-      output += "<div><font>" + formatDexNumber(pokemon.number) + "</font><img src='" + imagePathFor(pokemon.name) + "' alt='" + pokemon.name + "'/>" + pokemon.name + "</div>";
+      output += "<div><font>" + formatDexNumber(pokemon.number) + "</font>" + pokemon.name + "<img src='" + imagePathFor(pokemon.name) + "' alt='" + pokemon.name + "'/></div>";
       blockIndex++;
     }
     let endBlankBlocks = 30 - (pokemon.length % 30);
