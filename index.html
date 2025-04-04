@@ -49,6 +49,9 @@ function outputNationalDex() {
       if (blockIndex === 24) {
         classBlock += "class='bottomLeftBlock'";
       }
+      if (blockIndex === 29) {
+        classBlock += "class='bottomRightBlock'";
+      }
       output += "<div " + classBlock + "><img src='" + imagePathFor(pokemon.name) + "' alt='" + pokemon.name + "'/><font>" + formatDexNumber(pokemon.number) + "</font>" + pokemon.name + "</div>";
       blockIndex++;
     }
