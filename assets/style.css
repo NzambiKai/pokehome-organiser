@@ -1,8 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     font-size: 1rem;
-    /* background-image: linear-gradient(to bottom, #d7f89d, #92e5cb); */
-    background-image: linear-gradient(to bottom, #1a1a1a, #000000);
+    background-image: linear-gradient(to bottom, #d7f89d, #92e5cb);
     background-attachment: fixed;
     color: #253933;
 }
@@ -14,7 +13,7 @@ body {
 .container > div.card {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 1px 1px;
+    gap: 1rem 1rem;
     background-color: #11a7a8; /* #fafbf5; */
     border-radius: 1rem;
     margin-bottom: 4rem;
