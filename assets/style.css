@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    background-image: linear-gradient(to bottom, #d7f89d, #92e5cb);
+    background-attachment: fixed;
+    color: #253933;
+}
+.container {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.container > div.card {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1px 1px;
+    background-color: #11a7a8; /* #fafbf5; */
+    border-radius: 1rem;
+    margin-bottom: 4rem;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.25);
+}
+.container > div.card  > div {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.container > div.card > div.bottomLeftBlock {
+    border-radius: 0rem 0rem 0rem 1rem;
+}
+.container > div.card > div.bottomRightBlock {
+    border-radius: 0rem 0rem 1rem 0rem;
+}
+.container > div.card > div:not([class]), .container > div.card > div.bottomLeftBlock, .container > div.card > div.bottomRightBlock {
+    background-image: radial-gradient(rgba(217, 249, 236, 1), #fafbf3 75%); /* rgba(217, 249, 236, 0) 75%); */
+}
+.container > div.card > div.header, .container > div.card > div.subheader {
+    grid-column: 1 / -1;
+    aspect-ratio: auto;
+}
+.container > div.card > div.subheader > h2 {
+    font-weight: normal;
+    font-size: 2rem;
+    color: #FFF;
+}
+.container > div.card > div > font {
+    font-size: 0.75rem;
+    color: #58897a;
+}
+.container > div.card > div > img {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+}
