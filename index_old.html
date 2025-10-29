@@ -1,0 +1,1285 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pokémon HOME Helper</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="format-detection" content="telephone=no" />
+<style>
+* {
+	box-sizing: border-box;
+}
+body {
+	font: 16px Arial;
+}
+	h2 {
+		margin-top: 0.5rem;
+		margin-bottom: 0px;
+	}
+	#pokemonDexNumber {
+		color: rgba(0,0,0,0.5);
+	}
+/*the container must be positioned relative:*/
+.autocomplete {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	max-width: 384px;
+}
+input {
+	border: 1px solid transparent;
+	padding: 10px;
+	font-size: 16px;
+}
+input[type=text] {
+	background-color: rgba(0,0,0,0.1);
+	width: 100%;
+}
+.autocomplete-items {
+	position: absolute;
+	border: 1px solid #d4d4d4;
+	border-bottom: none;
+	border-top: none;
+	z-index: 99;
+	/*position the autocomplete items to be the same width as the container:*/
+	top: 100%;
+	left: 0;
+	right: 0;
+}
+.autocomplete-items div {
+	padding: 10px;
+	cursor: pointer;
+	background-color: #fff;
+	border-bottom: 1px solid #d4d4d4;
+}
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+	background-color: #e9e9e9;
+}
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+	background-color: DodgerBlue !important;
+	color: #ffffff;
+}
+.box {
+	width: 100%;
+	max-width: 384px;
+}
+.box div {
+	display: inline-block;
+	width: 16.6666666667%;
+	margin: 0px;
+}
+.box div img {
+	opacity: 0.25;
+	width: 100%;
+	height: auto;
+}
+.box div.active img {
+	opacity: 1;
+}
+	div.hide {
+		visibility: hidden;
+	}
+	div.show {
+		visibility: visible;
+	}
+</style>
+</head>
+
+<body>
+<div class="autocomplete">
+  <input id="myInput" type="text" name="myPokemon" placeholder="Enter Pokémon Name" onclick="clearInput()">
+</div>
+<h2><span id="boxName"></span>&nbsp;<span id="pokemonDexNumber"></span></h2>
+<div class="box">
+  <div id="1"><img src="assets/1.png" alt=""></div><div id="2"><img src="assets/2.png" alt=""></div><div id="3"><img src="assets/3.png" alt=""></div><div id="4"><img src="assets/4.png" alt=""></div><div id="5"><img src="assets/5.png" alt=""></div><div id="6"><img src="assets/6.png" alt=""></div>
+  <br/>
+  <div id="7"><img src="assets/7.png" alt=""></div><div id="8"><img src="assets/8.png" alt=""></div><div id="9"><img src="assets/9.png" alt=""></div><div id="10"><img src="assets/10.png" alt=""></div><div id="11"><img src="assets/11.png" alt=""></div><div id="12"><img src="assets/12.png" alt=""></div>
+  <br/>
+  <div id="13"><img src="assets/13.png" alt=""></div><div id="14"><img src="assets/14.png" alt=""></div><div id="15"><img src="assets/15.png" alt=""></div><div id="16"><img src="assets/16.png" alt=""></div><div id="17"><img src="assets/17.png" alt=""></div><div id="18"><img src="assets/18.png" alt=""></div>
+  <br/>
+  <div id="19"><img src="assets/19.png" alt=""></div><div id="20"><img src="assets/20.png" alt=""></div><div id="21"><img src="assets/21.png" alt=""></div><div id="22"><img src="assets/22.png" alt=""></div><div id="23"><img src="assets/23.png" alt=""></div><div id="24"><img src="assets/24.png" alt=""></div>
+  <br/>
+  <div id="25"><img src="assets/25.png" alt=""></div><div id="26"><img src="assets/26.png" alt=""></div><div id="27"><img src="assets/27.png" alt=""></div><div id="28"><img src="assets/28.png" alt=""></div><div id="29"><img src="assets/29.png" alt=""></div><div id="30"><img src="assets/30.png" alt=""></div>
+</div>
+<div id="alolanBox" class="hide"><h3>Alolan Form</h3><div><img src="assets/19.png" alt=""></div></div>
+<div class="box">
+	</div>
+<script type="application/javascript">
+	function checkDifferentForm(value, array, callback) {
+  if (array.includes(value)) {
+    callback();
+  }
+}
+
+function displayAlolanFormBox() {
+	document.getElementById("alolanBox").classList.remove("hide");
+  document.getElementById("alolanBox").classList.add("show");
+}
+	
+	function displayBoxLocation(num) {
+		document.getElementById("pokemonDexNumber").innerHTML = "#"+num;
+		
+		checkDifferentForm(num, alolanFormNumbers, displayAlolanFormBox);
+		
+var goToBox = Math.floor(num/30);
+var location = num - (30*goToBox);
+var startImageNum;
+function addZeros(n) {
+  if (num < 10) {
+   return "000" + n;
+  }
+	if (num < 100) {
+   return "00" + n;
+  }
+  if (num < 1000) {
+   return "0" + n;
+  }
+}
+var startImageNum = num-(location-1);
+var startBoxName = addZeros(num-(location-1));
+var endBoxName = addZeros((num-(location-1))+29);
+if (location == 0) {
+var startImageNum = num-29;
+var startBoxName = addZeros(num-29);
+var endBoxName = addZeros(num);
+}
+document.getElementById("boxName").innerHTML = startBoxName + " - " + endBoxName;
+		
+var divElements = document.querySelectorAll(".box div");
+for (var i = 0; i < divElements.length; i++) {
+    divElements[i].classList = []; // remove all classes
+  }
+for (var x = 0; x < 30; x++) {
+    document.getElementById(x+1).innerHTML = "<img src='assets/" + String(startImageNum+x) + ".png' alt=''>"; // remove all classes
+  }
+  if (location == 0) {
+  	document.getElementById(30).classList.add("active");
+  } else {
+  	document.getElementById(location).classList.add("active");
+  }
+	}
+function clearInput(x) {
+        document.getElementById("myInput").value = "";
+    }
+
+
+</script>
+<script>
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "' data-dex='" + i + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+			  displayBoxLocation(parseInt(this.getElementsByTagName("input")[0].getAttribute("data-dex"))+1);
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+
+/*An array containing all the country names in the world:*/
+var pokemonNames = ["Bulbasaur", 
+"Ivysaur", 
+"Venusaur", 
+"Charmander", 
+"Charmeleon", 
+"Charizard", 
+"Squirtle", 
+"Wartortle", 
+"Blastoise", 
+"Caterpie", 
+"Metapod", 
+"Butterfree", 
+"Weedle", 
+"Kakuna", 
+"Beedrill", 
+"Pidgey", 
+"Pidgeotto", 
+"Pidgeot", 
+"Rattata", 
+"Raticate", 
+"Spearow", 
+"Fearow", 
+"Ekans", 
+"Arbok", 
+"Pikachu", 
+"Raichu", 
+"Sandshrew", 
+"Sandslash", 
+"Nidoran♀", 
+"Nidorina", 
+"Nidoqueen", 
+"Nidoran♂", 
+"Nidorino", 
+"Nidoking", 
+"Clefairy", 
+"Clefable", 
+"Vulpix", 
+"Ninetales", 
+"Jigglypuff", 
+"Wigglytuff", 
+"Zubat", 
+"Golbat", 
+"Oddish", 
+"Gloom", 
+"Vileplume", 
+"Paras", 
+"Parasect", 
+"Venonat", 
+"Venomoth", 
+"Diglett", 
+"Dugtrio", 
+"Meowth", 
+"Persian", 
+"Psyduck", 
+"Golduck", 
+"Mankey", 
+"Primeape", 
+"Growlithe", 
+"Arcanine", 
+"Poliwag", 
+"Poliwhirl", 
+"Poliwrath", 
+"Abra", 
+"Kadabra", 
+"Alakazam", 
+"Machop", 
+"Machoke", 
+"Machamp", 
+"Bellsprout", 
+"Weepinbell", 
+"Victreebel", 
+"Tentacool", 
+"Tentacruel", 
+"Geodude", 
+"Graveler", 
+"Golem", 
+"Ponyta", 
+"Rapidash", 
+"Slowpoke", 
+"Slowbro", 
+"Magnemite", 
+"Magneton", 
+"Farfetch’d", 
+"Doduo", 
+"Dodrio", 
+"Seel", 
+"Dewgong", 
+"Grimer", 
+"Muk", 
+"Shellder", 
+"Cloyster", 
+"Gastly", 
+"Haunter", 
+"Gengar", 
+"Onix", 
+"Drowzee", 
+"Hypno", 
+"Krabby", 
+"Kingler", 
+"Voltorb", 
+"Electrode", 
+"Exeggcute", 
+"Exeggutor", 
+"Cubone", 
+"Marowak", 
+"Hitmonlee", 
+"Hitmonchan", 
+"Lickitung", 
+"Koffing", 
+"Weezing", 
+"Rhyhorn", 
+"Rhydon", 
+"Chansey", 
+"Tangela", 
+"Kangaskhan", 
+"Horsea", 
+"Seadra", 
+"Goldeen", 
+"Seaking", 
+"Staryu", 
+"Starmie", 
+"Mr. Mime", 
+"Scyther", 
+"Jynx", 
+"Electabuzz", 
+"Magmar", 
+"Pinsir", 
+"Tauros", 
+"Magikarp", 
+"Gyarados", 
+"Lapras", 
+"Ditto", 
+"Eevee", 
+"Vaporeon", 
+"Jolteon", 
+"Flareon", 
+"Porygon", 
+"Omanyte", 
+"Omastar", 
+"Kabuto", 
+"Kabutops", 
+"Aerodactyl", 
+"Snorlax", 
+"Articuno", 
+"Zapdos", 
+"Moltres", 
+"Dratini", 
+"Dragonair", 
+"Dragonite", 
+"Mewtwo", 
+"Mew", 
+"Chikorita", 
+"Bayleef", 
+"Meganium", 
+"Cyndaquil", 
+"Quilava", 
+"Typhlosion", 
+"Totodile", 
+"Croconaw", 
+"Feraligatr", 
+"Sentret", 
+"Furret", 
+"Hoothoot", 
+"Noctowl", 
+"Ledyba", 
+"Ledian", 
+"Spinarak", 
+"Ariados", 
+"Crobat", 
+"Chinchou", 
+"Lanturn", 
+"Pichu", 
+"Cleffa", 
+"Igglybuff", 
+"Togepi", 
+"Togetic", 
+"Natu", 
+"Xatu", 
+"Mareep", 
+"Flaaffy", 
+"Ampharos", 
+"Bellossom", 
+"Marill", 
+"Azumarill", 
+"Sudowoodo", 
+"Politoed", 
+"Hoppip", 
+"Skiploom", 
+"Jumpluff", 
+"Aipom", 
+"Sunkern", 
+"Sunflora", 
+"Yanma", 
+"Wooper", 
+"Quagsire", 
+"Espeon", 
+"Umbreon", 
+"Murkrow", 
+"Slowking", 
+"Misdreavus", 
+"Unown", 
+"Wobbuffet", 
+"Girafarig", 
+"Pineco", 
+"Forretress", 
+"Dunsparce", 
+"Gligar", 
+"Steelix", 
+"Snubbull", 
+"Granbull", 
+"Qwilfish", 
+"Scizor", 
+"Shuckle", 
+"Heracross", 
+"Sneasel", 
+"Teddiursa", 
+"Ursaring", 
+"Slugma", 
+"Magcargo", 
+"Swinub", 
+"Piloswine", 
+"Corsola", 
+"Remoraid", 
+"Octillery", 
+"Delibird", 
+"Mantine", 
+"Skarmory", 
+"Houndour", 
+"Houndoom", 
+"Kingdra", 
+"Phanpy", 
+"Donphan", 
+"Porygon2", 
+"Stantler", 
+"Smeargle", 
+"Tyrogue", 
+"Hitmontop", 
+"Smoochum", 
+"Elekid", 
+"Magby", 
+"Miltank", 
+"Blissey", 
+"Raikou", 
+"Entei", 
+"Suicune", 
+"Larvitar", 
+"Pupitar", 
+"Tyranitar", 
+"Lugia", 
+"Ho-Oh", 
+"Celebi", 
+"Treecko", 
+"Grovyle", 
+"Sceptile", 
+"Torchic", 
+"Combusken", 
+"Blaziken", 
+"Mudkip", 
+"Marshtomp", 
+"Swampert", 
+"Poochyena", 
+"Mightyena", 
+"Zigzagoon", 
+"Linoone", 
+"Wurmple", 
+"Silcoon", 
+"Beautifly", 
+"Cascoon", 
+"Dustox", 
+"Lotad", 
+"Lombre", 
+"Ludicolo", 
+"Seedot", 
+"Nuzleaf", 
+"Shiftry", 
+"Taillow", 
+"Swellow", 
+"Wingull", 
+"Pelipper", 
+"Ralts", 
+"Kirlia", 
+"Gardevoir", 
+"Surskit", 
+"Masquerain", 
+"Shroomish", 
+"Breloom", 
+"Slakoth", 
+"Vigoroth", 
+"Slaking", 
+"Nincada", 
+"Ninjask", 
+"Shedinja", 
+"Whismur", 
+"Loudred", 
+"Exploud", 
+"Makuhita", 
+"Hariyama", 
+"Azurill", 
+"Nosepass", 
+"Skitty", 
+"Delcatty", 
+"Sableye", 
+"Mawile", 
+"Aron", 
+"Lairon", 
+"Aggron", 
+"Meditite", 
+"Medicham", 
+"Electrike", 
+"Manectric", 
+"Plusle", 
+"Minun", 
+"Volbeat", 
+"Illumise", 
+"Roselia", 
+"Gulpin", 
+"Swalot", 
+"Carvanha", 
+"Sharpedo", 
+"Wailmer", 
+"Wailord", 
+"Numel", 
+"Camerupt", 
+"Torkoal", 
+"Spoink", 
+"Grumpig", 
+"Spinda", 
+"Trapinch", 
+"Vibrava", 
+"Flygon", 
+"Cacnea", 
+"Cacturne", 
+"Swablu", 
+"Altaria", 
+"Zangoose", 
+"Seviper", 
+"Lunatone", 
+"Solrock", 
+"Barboach", 
+"Whiscash", 
+"Corphish", 
+"Crawdaunt", 
+"Baltoy", 
+"Claydol", 
+"Lileep", 
+"Cradily", 
+"Anorith", 
+"Armaldo", 
+"Feebas", 
+"Milotic", 
+"Castform", 
+"Kecleon", 
+"Shuppet", 
+"Banette", 
+"Duskull", 
+"Dusclops", 
+"Tropius", 
+"Chimecho", 
+"Absol", 
+"Wynaut", 
+"Snorunt", 
+"Glalie", 
+"Spheal", 
+"Sealeo", 
+"Walrein", 
+"Clamperl", 
+"Huntail", 
+"Gorebyss", 
+"Relicanth", 
+"Luvdisc", 
+"Bagon", 
+"Shelgon", 
+"Salamence", 
+"Beldum", 
+"Metang", 
+"Metagross", 
+"Regirock", 
+"Regice", 
+"Registeel", 
+"Latias", 
+"Latios", 
+"Kyogre", 
+"Groudon", 
+"Rayquaza", 
+"Jirachi", 
+"Deoxys", 
+"Turtwig", 
+"Grotle", 
+"Torterra", 
+"Chimchar", 
+"Monferno", 
+"Infernape", 
+"Piplup", 
+"Prinplup", 
+"Empoleon", 
+"Starly", 
+"Staravia", 
+"Staraptor", 
+"Bidoof", 
+"Bibarel", 
+"Kricketot", 
+"Kricketune", 
+"Shinx", 
+"Luxio", 
+"Luxray", 
+"Budew", 
+"Roserade", 
+"Cranidos", 
+"Rampardos", 
+"Shieldon", 
+"Bastiodon", 
+"Burmy", 
+"Wormadam", 
+"Mothim", 
+"Combee", 
+"Vespiquen", 
+"Pachirisu", 
+"Buizel", 
+"Floatzel", 
+"Cherubi", 
+"Cherrim", 
+"Shellos", 
+"Gastrodon", 
+"Ambipom", 
+"Drifloon", 
+"Drifblim", 
+"Buneary", 
+"Lopunny", 
+"Mismagius", 
+"Honchkrow", 
+"Glameow", 
+"Purugly", 
+"Chingling", 
+"Stunky", 
+"Skuntank", 
+"Bronzor", 
+"Bronzong", 
+"Bonsly", 
+"Mime Jr.", 
+"Happiny", 
+"Chatot", 
+"Spiritomb", 
+"Gible", 
+"Gabite", 
+"Garchomp", 
+"Munchlax", 
+"Riolu", 
+"Lucario", 
+"Hippopotas", 
+"Hippowdon", 
+"Skorupi", 
+"Drapion", 
+"Croagunk", 
+"Toxicroak", 
+"Carnivine", 
+"Finneon", 
+"Lumineon", 
+"Mantyke", 
+"Snover", 
+"Abomasnow", 
+"Weavile", 
+"Magnezone", 
+"Lickilicky", 
+"Rhyperior", 
+"Tangrowth", 
+"Electivire", 
+"Magmortar", 
+"Togekiss", 
+"Yanmega", 
+"Leafeon", 
+"Glaceon", 
+"Gliscor", 
+"Mamoswine", 
+"Porygon-Z", 
+"Gallade", 
+"Probopass", 
+"Dusknoir", 
+"Froslass", 
+"Rotom", 
+"Uxie", 
+"Mesprit", 
+"Azelf", 
+"Dialga", 
+"Palkia", 
+"Heatran", 
+"Regigigas", 
+"Giratina", 
+"Cresselia", 
+"Phione", 
+"Manaphy", 
+"Darkrai", 
+"Shaymin", 
+"Arceus", 
+"Victini", 
+"Snivy", 
+"Servine", 
+"Serperior", 
+"Tepig", 
+"Pignite", 
+"Emboar", 
+"Oshawott", 
+"Dewott", 
+"Samurott", 
+"Patrat", 
+"Watchog", 
+"Lillipup", 
+"Herdier", 
+"Stoutland", 
+"Purrloin", 
+"Liepard", 
+"Pansage", 
+"Simisage", 
+"Pansear", 
+"Simisear", 
+"Panpour", 
+"Simipour", 
+"Munna", 
+"Musharna", 
+"Pidove", 
+"Tranquill", 
+"Unfezant", 
+"Blitzle", 
+"Zebstrika", 
+"Roggenrola", 
+"Boldore", 
+"Gigalith", 
+"Woobat", 
+"Swoobat", 
+"Drilbur", 
+"Excadrill", 
+"Audino", 
+"Timburr", 
+"Gurdurr", 
+"Conkeldurr", 
+"Tympole", 
+"Palpitoad", 
+"Seismitoad", 
+"Throh", 
+"Sawk", 
+"Sewaddle", 
+"Swadloon", 
+"Leavanny", 
+"Venipede", 
+"Whirlipede", 
+"Scolipede", 
+"Cottonee", 
+"Whimsicott", 
+"Petilil", 
+"Lilligant", 
+"Basculin", 
+"Sandile", 
+"Krokorok", 
+"Krookodile", 
+"Darumaka", 
+"Darmanitan", 
+"Maractus", 
+"Dwebble", 
+"Crustle", 
+"Scraggy", 
+"Scrafty", 
+"Sigilyph", 
+"Yamask", 
+"Cofagrigus", 
+"Tirtouga", 
+"Carracosta", 
+"Archen", 
+"Archeops", 
+"Trubbish", 
+"Garbodor", 
+"Zorua", 
+"Zoroark", 
+"Minccino", 
+"Cinccino", 
+"Gothita", 
+"Gothorita", 
+"Gothitelle", 
+"Solosis", 
+"Duosion", 
+"Reuniclus", 
+"Ducklett", 
+"Swanna", 
+"Vanillite", 
+"Vanillish", 
+"Vanilluxe", 
+"Deerling", 
+"Sawsbuck", 
+"Emolga", 
+"Karrablast", 
+"Escavalier", 
+"Foongus", 
+"Amoonguss", 
+"Frillish", 
+"Jellicent", 
+"Alomomola", 
+"Joltik", 
+"Galvantula", 
+"Ferroseed", 
+"Ferrothorn", 
+"Klink", 
+"Klang", 
+"Klinklang", 
+"Tynamo", 
+"Eelektrik", 
+"Eelektross", 
+"Elgyem", 
+"Beheeyem", 
+"Litwick", 
+"Lampent", 
+"Chandelure", 
+"Axew", 
+"Fraxure", 
+"Haxorus", 
+"Cubchoo", 
+"Beartic", 
+"Cryogonal", 
+"Shelmet", 
+"Accelgor", 
+"Stunfisk", 
+"Mienfoo", 
+"Mienshao", 
+"Druddigon", 
+"Golett", 
+"Golurk", 
+"Pawniard", 
+"Bisharp", 
+"Bouffalant", 
+"Rufflet", 
+"Braviary", 
+"Vullaby", 
+"Mandibuzz", 
+"Heatmor", 
+"Durant", 
+"Deino", 
+"Zweilous", 
+"Hydreigon", 
+"Larvesta", 
+"Volcarona", 
+"Cobalion", 
+"Terrakion", 
+"Virizion", 
+"Tornadus", 
+"Thundurus", 
+"Reshiram", 
+"Zekrom", 
+"Landorus", 
+"Kyurem", 
+"Keldeo", 
+"Meloetta", 
+"Genesect", 
+"Chespin", 
+"Quilladin", 
+"Chesnaught", 
+"Fennekin", 
+"Braixen", 
+"Delphox", 
+"Froakie", 
+"Frogadier", 
+"Greninja", 
+"Bunnelby", 
+"Diggersby", 
+"Fletchling", 
+"Fletchinder", 
+"Talonflame", 
+"Scatterbug", 
+"Spewpa", 
+"Vivillon", 
+"Litleo", 
+"Pyroar", 
+"Flabébé", 
+"Floette", 
+"Florges", 
+"Skiddo", 
+"Gogoat", 
+"Pancham", 
+"Pangoro", 
+"Furfrou", 
+"Espurr", 
+"Meowstic", 
+"Honedge", 
+"Doublade", 
+"Aegislash", 
+"Spritzee", 
+"Aromatisse", 
+"Swirlix", 
+"Slurpuff", 
+"Inkay", 
+"Malamar", 
+"Binacle", 
+"Barbaracle", 
+"Skrelp", 
+"Dragalge", 
+"Clauncher", 
+"Clawitzer", 
+"Helioptile", 
+"Heliolisk", 
+"Tyrunt", 
+"Tyrantrum", 
+"Amaura", 
+"Aurorus", 
+"Sylveon", 
+"Hawlucha", 
+"Dedenne", 
+"Carbink", 
+"Goomy", 
+"Sliggoo", 
+"Goodra", 
+"Klefki", 
+"Phantump", 
+"Trevenant", 
+"Pumpkaboo", 
+"Gourgeist", 
+"Bergmite", 
+"Avalugg", 
+"Noibat", 
+"Noivern", 
+"Xerneas", 
+"Yveltal", 
+"Zygarde", 
+"Diancie", 
+"Hoopa", 
+"Volcanion", 
+"Rowlet", 
+"Dartrix", 
+"Decidueye", 
+"Litten", 
+"Torracat", 
+"Incineroar", 
+"Popplio", 
+"Brionne", 
+"Primarina", 
+"Pikipek", 
+"Trumbeak", 
+"Toucannon", 
+"Yungoos", 
+"Gumshoos", 
+"Grubbin", 
+"Charjabug", 
+"Vikavolt", 
+"Crabrawler", 
+"Crabominable", 
+"Oricorio", 
+"Cutiefly", 
+"Ribombee", 
+"Rockruff", 
+"Lycanroc", 
+"Wishiwashi", 
+"Mareanie", 
+"Toxapex", 
+"Mudbray", 
+"Mudsdale", 
+"Dewpider", 
+"Araquanid", 
+"Fomantis", 
+"Lurantis", 
+"Morelull", 
+"Shiinotic", 
+"Salandit", 
+"Salazzle", 
+"Stufful", 
+"Bewear", 
+"Bounsweet", 
+"Steenee", 
+"Tsareena", 
+"Comfey", 
+"Oranguru", 
+"Passimian", 
+"Wimpod", 
+"Golisopod", 
+"Sandygast", 
+"Palossand", 
+"Pyukumuku", 
+"Type: Null", 
+"Silvally", 
+"Minior", 
+"Komala", 
+"Turtonator", 
+"Togedemaru", 
+"Mimikyu", 
+"Bruxish", 
+"Drampa", 
+"Dhelmise", 
+"Jangmo-o", 
+"Hakamo-o", 
+"Kommo-o", 
+"Tapu Koko", 
+"Tapu Lele", 
+"Tapu Bulu", 
+"Tapu Fini", 
+"Cosmog", 
+"Cosmoem", 
+"Solgaleo", 
+"Lunala", 
+"Nihilego", 
+"Buzzwole", 
+"Pheromosa", 
+"Xurkitree", 
+"Celesteela", 
+"Kartana", 
+"Guzzlord", 
+"Necrozma", 
+"Magearna", 
+"Marshadow", 
+"Poipole", 
+"Naganadel", 
+"Stakataka", 
+"Blacephalon", 
+"Zeraora", 
+"Meltan", 
+"Melmetal", 
+"Grookey", 
+"Thwackey", 
+"Rillaboom", 
+"Scorbunny", 
+"Raboot", 
+"Cinderace", 
+"Sobble", 
+"Drizzile", 
+"Inteleon", 
+"Skwovet", 
+"Greedent", 
+"Rookidee", 
+"Corvisquire", 
+"Corviknight", 
+"Blipbug", 
+"Dottler", 
+"Orbeetle", 
+"Nickit", 
+"Thievul", 
+"Gossifleur", 
+"Eldegoss", 
+"Wooloo", 
+"Dubwool", 
+"Chewtle", 
+"Drednaw", 
+"Yamper", 
+"Boltund", 
+"Rolycoly", 
+"Carkol", 
+"Coalossal", 
+"Applin", 
+"Flapple", 
+"Appletun", 
+"Silicobra", 
+"Sandaconda", 
+"Cramorant", 
+"Arrokuda", 
+"Barraskewda", 
+"Toxel", 
+"Toxtricity", 
+"Sizzlipede", 
+"Centiskorch", 
+"Clobbopus", 
+"Grapploct", 
+"Sinistea", 
+"Polteageist", 
+"Hatenna", 
+"Hattrem", 
+"Hatterene", 
+"Impidimp", 
+"Morgrem", 
+"Grimmsnarl", 
+"Obstagoon", 
+"Perrserker", 
+"Cursola", 
+"Sirfetch’d", 
+"Mr. Rime", 
+"Runerigus", 
+"Milcery", 
+"Alcremie", 
+"Falinks", 
+"Pincurchin", 
+"Snom", 
+"Frosmoth", 
+"Stonjourner", 
+"Eiscue", 
+"Indeedee", 
+"Morpeko", 
+"Cufant", 
+"Copperajah", 
+"Dracozolt", 
+"Arctozolt", 
+"Dracovish", 
+"Arctovish", 
+"Duraludon", 
+"Dreepy", 
+"Drakloak", 
+"Dragapult", 
+"Zacian", 
+"Zamazenta", 
+"Eternatus", 
+"Kubfu", 
+"Urshifu", 
+"Zarude", 
+"Regieleki", 
+"Regidrago", 
+"Glastrier", 
+"Spectrier", 
+"Calyrex", 
+"Wyrdeer", 
+"Kleavor", 
+"Ursaluna", 
+"Basculegion", 
+"Sneasler", 
+"Overqwil", 
+"Enamorus", 
+"Sprigatito", 
+"Floragato", 
+"Meowscarada", 
+"Fuecoco", 
+"Crocalor", 
+"Skeledirge", 
+"Quaxly", 
+"Quaxwell", 
+"Quaquaval", 
+"Lechonk", 
+"Oinkologne", 
+"Tarountula", 
+"Spidops", 
+"Nymble", 
+"Lokix", 
+"Pawmi", 
+"Pawmo", 
+"Pawmot", 
+"Tandemaus", 
+"Maushold", 
+"Fidough", 
+"Dachsbun", 
+"Smoliv", 
+"Dolliv", 
+"Arboliva", 
+"Squawkabilly", 
+"Nacli", 
+"Naclstack", 
+"Garganacl", 
+"Charcadet", 
+"Armarouge", 
+"Ceruledge", 
+"Tadbulb", 
+"Bellibolt", 
+"Wattrel", 
+"Kilowattrel", 
+"Maschiff", 
+"Mabosstiff", 
+"Shroodle", 
+"Grafaiai", 
+"Bramblin", 
+"Brambleghast", 
+"Toedscool", 
+"Toedscruel", 
+"Klawf", 
+"Capsakid", 
+"Scovillain", 
+"Rellor", 
+"Rabsca", 
+"Flittle", 
+"Espathra", 
+"Tinkatink", 
+"Tinkatuff", 
+"Tinkaton", 
+"Wiglett", 
+"Wugtrio", 
+"Bombirdier", 
+"Finizen", 
+"Palafin", 
+"Varoom", 
+"Revavroom", 
+"Cyclizar", 
+"Orthworm", 
+"Glimmet", 
+"Glimmora", 
+"Greavard", 
+"Houndstone", 
+"Flamigo", 
+"Cetoddle", 
+"Cetitan", 
+"Veluza", 
+"Dondozo", 
+"Tatsugiri", 
+"Annihilape", 
+"Clodsire", 
+"Farigiraf", 
+"Dudunsparce", 
+"Kingambit", 
+"Great Tusk", 
+"Scream Tail", 
+"Brute Bonnet", 
+"Flutter Mane", 
+"Slither Wing", 
+"Sandy Shocks", 
+"Iron Treads", 
+"Iron Bundle", 
+"Iron Hands", 
+"Iron Jugulis", 
+"Iron Moth", 
+"Iron Thorns", 
+"Frigibax", 
+"Arctibax", 
+"Baxcalibur", 
+"Gimmighoul", 
+"Gholdengo", 
+"Wo-Chien", 
+"Chien-Pao", 
+"Ting-Lu", 
+"Chi-Yu", 
+"Roaring Moon", 
+"Iron Valiant", 
+"Koraidon", 
+"Miraidon", ];
+
+var alolanFormNumbers = [19,20,26,27,28,27,28,50,51,52,53,74,75,76,88,89,103,105];
+
+	
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("myInput"), pokemonNames);
+</script>
+</body>
+</html>

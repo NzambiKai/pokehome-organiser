@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PokeHome Organiser - Old Data</title>
+</head>
+<body>
+<div id="container" class="container"></div>
+Test
+<script type="text/javascript" src="assets/data-old.js"></script>
+<script>
+let output = "";
+outputNationalDex();
+document.getElementById("container").innerHTML = output;
+function outputNationalDex() {
+    pokemon.forEach(outputDexItems);
+    function outputDexItems(pokemon, index) {
+      var newNumber = index+1;
+      output += `{ "number": ` + newNumber + `, "name": "` + pokemon.name + `", },<br/>`; //pokemon.name + ", ";
+    }
+}
+</script>
+</body>
+</html>

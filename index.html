@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PokeHome Organiser</title>
+<link href="assets/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="container" class="container"></div>
+<script type="text/javascript" src="assets/data.js"></script> 
+<script>
+let output = "";
+//let blockIndex = 0;
+header("National Dex");
+outputNationalDex();
+// header("Alt Forms");
+// outputAltForm("Alolan");
+document.getElementById("container").innerHTML = output;
+function header(title) {
+    output += "<div class='header'><h1>" + title + "</h1></div>";
+}
+function outputNationalDex() {
+    let blockIndex = 0;
+    let subBlockIndex = 0;
+    output += "<div class='card'>";
+    pokemon.forEach(outputDexItems);
+    function outputDexItems(pokemon, index) {
+      function formatDexNumber(num) {
+        let insetNum = num;
+        return insetNum.toString().padStart(4, '0');
+      }
+      function imagePathFor(name) {
+        var lowercasePokemonName = pokemon.name.toLowerCase()
+          .replace(/♀/g, '-m')
+          .replace(/♂/g, '-f')
+          .replace(/’/g, '')
+          .replace(/\./g, '')
+          .replace(/é/g, 'e')
+          .replace(/:/g, '')
+          .replace(/\s+/g, '-');
+        return "assets/images/" + lowercasePokemonName + ".webp";
+      }
+      if ((blockIndex) % 30 === 0) {
+        if (blockIndex != 0) {
+          output += "</div><div class='card'>";
+        }
+        output += "<div class='subheader'><h2>" + formatDexNumber(blockIndex+1) + " - " + formatDexNumber(blockIndex+30) + "</h2></div>";
+        subBlockIndex = 0;
+      }
+      let classBlock = "";
+      if (subBlockIndex === 24) {
+        classBlock += "class='bottomLeftBlock'";
+      }
+      if (subBlockIndex === 29) {
+        classBlock += "class='bottomRightBlock'";
+      }
+      output += "<div " + classBlock + "><img src='" + imagePathFor(pokemon.name) + "' alt='" + pokemon.name + "'/><font>" + formatDexNumber(pokemon.number) + "</font>" + pokemon.name + "</div>";
+      blockIndex++;
+      subBlockIndex++;
+    }
+    let endBlankBlocks = 30 - (pokemon.length % 30);
+    for (let i = 0; i < endBlankBlocks; i++) {
+      output += "<div></div>";
+    }
+    output += "</div>";
+}
+function outputAltForm(title) {
+    let blockIndex = 0;
+    let lowercaseTitle = title.toLowerCase();
+    pokemon.filter(item => lowercaseTitle in item).forEach(outputDexItems);
+    function outputDexItems(pokemon, index) {
+      function formatDexNumber(num) {
+        let insetNum = num+1;
+        return insetNum.toString().padStart(4, '0');
+      }
+      if ((blockIndex) % 30 === 0) {
+        output += "<div class='subheader'><h2>" + title + " Forms 1</h2></div>";
+      }
+      output += "<div><font>" + formatDexNumber(pokemon.number) + "</font>" + pokemon.name + "<br/>" + pokemon[lowercaseTitle] + "</div>";
+      blockIndex++;
+    }
+    let endBlankBlocks = 30 - (pokemon.length % 30);
+    for (let i = 0; i < endBlankBlocks; i++) {
+      output += "<div></div>";
+    }
+}
+</script>
+</body>
+</html>
+<!-- <h3>0001 - 0030</h3>
+<img src="assets/images/bulbasaur.webp" alt="Bulbasaur"/>
+<h1>Alt Forms</h1>
+    Alolan Forms 1
+    Galarian Forms 1
+    Hisuian Forms 1
+    Paldean Forms 1
+    Gender-Specific Forms 1
+    Gender-Specific Forms 2
+    Gender-Specific Forms 3
+    Gender-Specific Forms 4
+    Gender-Specific Forms 5
+    Gender-Specific Forms 6
+    Gender-Specific Forms 7
+    Alt Forms 1
+    Alt Forms 2
+    Alt Forms 3
+    Alt Forms 4
+    Alt Forms 5
+    Union Forms 1
+    Vivillon Forms 1
+    Alcremie Forms 1
+    Alcremie Forms 2
+    Alcremie Forms 3
+<h1>Shiny National Dex</h1>
+<h1>Shiny Alt Forms</h1> -->
